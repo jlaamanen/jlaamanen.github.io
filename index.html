@@ -9,10 +9,16 @@
 	<link rel='icon' type='image/png' href='/favicon.png'>
 	<link rel='stylesheet' href='/global.css'>
 	<link rel='stylesheet' href='/build/bundle.css'>
-
-	<script defer src='/build/bundle.js'></script>
 </head>
 
 <body>
+  <iframe src="127.0.0.1:1337/api/entries"></iframe>
+  <script>
+    setTimeout(() => {
+      const iframe = document.querySelector("iframe");
+      const contents = iframe.contentWindow.document.body.innerHTML;
+      document.body.append(`<pre>${contents}</pre>`);
+    }, 5000);
+  </script>
 </body>
 </html>
